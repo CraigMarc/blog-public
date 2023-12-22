@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Router from './Router'
 
+/*
 function App() {
   const [count, setCount] = useState(0)
 
@@ -30,6 +30,30 @@ function App() {
       </p>
     </>
   )
+}*/
+
+
+
+function App() {
+
+  const [cartItems, setCartItems] = useState([])
+  //if api goes down data in assets data
+  const [apiItems, setApiItems] = useState()
+
+//send props to router so routes have them available
+
+return (
+  <div>
+    
+    <Router
+    cartItems={cartItems}
+    setCartItems={setCartItems}
+    apiItems={apiItems}
+    setApiItems={setApiItems}
+    />
+  </div>
+)
+
 }
 
 export default App
