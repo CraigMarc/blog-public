@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
-
+import Header from './Header'
 
 function Home(props) {
 
@@ -25,7 +25,7 @@ function Home(props) {
       const res = await fetch("https://blogapi1200.fly.dev/api/published")
 
       const messageData = await res.json();
-     
+
       //setData(productData)
       setMessages(messageData)
 
@@ -52,7 +52,7 @@ function Home(props) {
 
   if (error) return (
     <div>
-      
+
       <p>A network error was encountered</p>
     </div>
   )
@@ -64,15 +64,15 @@ function Home(props) {
 
   return (
     <div>
-
+      <Header />
       <div className='postContainer'>
-        <h1>Blog</h1>
+
         <div className="postCard">
 
           {messages.map((index) => {
             let date = new Date(index.timestamp).toLocaleString()
-            
-            
+
+
             return (
 
               <div key={index._id} className="product">
