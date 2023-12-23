@@ -28,9 +28,11 @@ const Post = (props) => {
   }
 
   function clearAllInputs() {
-    let allInputs = document.querySelectorAll('input');
+    let nameInput = document.getElementById('name');
+    let commentInput = document.getElementById('comment');
     //let textArea = document.querySelector('textarea')
-    allInputs.forEach(singleInput => singleInput.value = '');
+    nameInput.value = '';
+    commentInput.value = '';
    // textArea.value = ''
   }
 
@@ -82,7 +84,7 @@ const Post = (props) => {
                 </label>
 
                 <div className="submitContainer">
-                <input type="submit" />
+                <input type="submit" value="add a comment" />
                 </div>
             </form>
         
