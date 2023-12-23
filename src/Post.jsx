@@ -10,8 +10,7 @@ const Post = (props) => {
     messages,
     comments,
     setComments,
-    messageId,
-    setMessageId
+   
     
   } = props;
 
@@ -73,7 +72,13 @@ const Post = (props) => {
 //jsx return
     return (
       <div>
-        <h1>{postData[0].title}</h1>
+        <header>
+        <h1>Blog</h1>
+        <Link className="heading" to="/">
+                <div>Home</div>
+            </Link>
+        </header>
+        <h2>{postData[0].title}</h2>
         <p>{postData[0].text}</p>
 
         <h2>Comments</h2>

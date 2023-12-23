@@ -12,8 +12,7 @@ const Router = (props) => {
     setMessages,
     comments,
     setComments,
-    messageId,
-    setMessageId
+    
 
   } = props;
 
@@ -34,8 +33,7 @@ const Router = (props) => {
           messages={messages}
           comments={comments}
           setComments={setComments}
-          messageId={messageId}
-          setMessageId={setMessageId}
+          
           />,
         
         errorElement: <ErrorPage />,
