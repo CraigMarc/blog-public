@@ -10,8 +10,8 @@ const Router = (props) => {
 
     messages,
     setMessages,
-    cartItems,
-    setCartItems
+    comments,
+    setComments
 
   } = props;
 
@@ -30,6 +30,8 @@ const Router = (props) => {
         element:
           <Post
           messages={messages}
+          comments={comments}
+          setComments={setComments}
           />,
         
         errorElement: <ErrorPage />,

@@ -17,7 +17,7 @@ function Home(props) {
   const [loading, setLoading] = useState(true);
 
 
-  const fetchInfo = async (pics) => {
+  const fetchInfo = async () => {
     //setLoading(true)
 
     try {
@@ -52,7 +52,7 @@ function Home(props) {
 
   if (error) return (
     <div>
-      <Header />
+      
       <p>A network error was encountered</p>
     </div>
   )

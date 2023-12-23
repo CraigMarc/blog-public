@@ -37,8 +37,7 @@ function App() {
 function App() {
 
   const [messages, setMessages] = useState([])
-  //if api goes down data in assets data
-  const [apiItems, setApiItems] = useState()
+  const [comments, setComments] = useState()
 
 //send props to router so routes have them available
 
@@ -48,8 +47,8 @@ return (
     <Router
     messages={messages}
     setMessages={setMessages}
-    apiItems={apiItems}
-    setApiItems={setApiItems}
+    comments={comments}
+    setComments={setComments}
     />
   </div>
 )
