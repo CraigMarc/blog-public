@@ -76,12 +76,11 @@ function Home(props) {
             return (
 
               <div key={index.id} className="product">
-                <Link to="/post" state={index.id}>
+                <Link to="/message" state={index.id}>
                   <div id={index.id} className="card" >
 
 
                     <h3>{index.title}</h3>
-                    <p>{index.text}</p>
                     <p>{date}</p>
                   </div>
                 </Link>
