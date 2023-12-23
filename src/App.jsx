@@ -36,7 +36,7 @@ function App() {
 
 function App() {
 
-  const [cartItems, setCartItems] = useState([])
+  const [messages, setMessages] = useState([])
   //if api goes down data in assets data
   const [apiItems, setApiItems] = useState()
 
@@ -46,8 +46,8 @@ return (
   <div>
     
     <Router
-    cartItems={cartItems}
-    setCartItems={setCartItems}
+    messages={messages}
+    setMessages={setMessages}
     apiItems={apiItems}
     setApiItems={setApiItems}
     />

@@ -8,8 +8,8 @@ const Router = (props) => {
 
   const {
 
-    apiItems,
-    setApiItems,
+    messages,
+    setMessages,
     cartItems,
     setCartItems
 
@@ -19,7 +19,10 @@ const Router = (props) => {
     
     {
       path: "/",
-      element: <Home />,
+      element: <Home
+      messages={messages}
+        setMessages={setMessages}
+      />,
       errorElement: <ErrorPage />,
     },
     {
