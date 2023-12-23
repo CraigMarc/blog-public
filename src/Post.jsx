@@ -13,50 +13,26 @@ const Post = (props) => {
     
   } = props;
 
- // get comments from api
+  const handleCommentSubmit = (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(event.target).entries());
+    console.log(data)
+    /*
+    let uuid = self.crypto.randomUUID();
+    const idData = { ...data, id: uuid }
+    const newSchool = [...schoolData, idData]
+    setSchoolData(newSchool);
+*/
 
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  const fetchInfo = async () => {
-    //setLoading(true)
-
-    try {
-      
-      const res = await fetch("https://blogapi1200.fly.dev/api/comments")
-
-      const commentsData = await res.json();
-     
-      //setData(productData)
-      setComments(commentsData)
-
-    }
-
-    catch (error) {
-      console.error("There has been a problem with your fetch operation:", error);
-      //add error message to dom
-      setError("true")
-
-    }
-    setLoading(false)
-
+    clearAllInputs()
   }
 
-
-  useEffect(() => {
-    fetchInfo();
-  }, [])
-
-  //display error and loading for api call
-
-  if (error) return (
-    <div>
-      
-      <p>A network error was encountered</p>
-    </div>
-  )
-
-  if (loading) return <p>Loading...</p>;
+  function clearAllInputs() {
+    let allInputs = document.querySelectorAll('input');
+    //let textArea = document.querySelector('textarea')
+    allInputs.forEach(singleInput => singleInput.value = '');
+   // textArea.value = ''
+  }
 
   //filter posts for proper post
 
@@ -80,6 +56,35 @@ const Post = (props) => {
         <CommentsJsx
          commentData={commentData}
         />
+
+        <form id="commentForm" onSubmit={handleCommentSubmit}>
+               
+                <label>
+                    Name {' '}
+                    <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        required
+                      
+                    />
+                </label>
+
+                <label>
+                    Comment {' '}
+                    <input
+                        id="comment"
+                        type="text"
+                        name="comment"
+                        required
+                     
+                    />
+                </label>
+
+                <div className="submitContainer">
+                <input type="submit" />
+                </div>
+            </form>
         
       </div>
     );
