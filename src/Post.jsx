@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from "react-router-dom";
-
+import CommentsJsx from './CommentsJsx'
 
 
 const Post = (props) => {
@@ -69,44 +69,6 @@ const Post = (props) => {
  
   const commentData = comments.filter((comment) => comment.posts_id == postId)
 
-
-  //function to list comments
-  const CommentsJsx = () => {
-    
-    if (commentData.length == 0) {
-      return (
-        <div>there are no comments</div>
-      )
-    }
-
-    return (
-      <div>
-        {commentData.map((index) => {
-            let date = new Date(index.timestamp).toLocaleString()
-            
-            
-            return (
-
-              <div key={index._id} className="product">
-                
-                  <div id={index._id} className="card" >
-
-
-                    <h3>{index.name}</h3>
-                    <p>{index.text}</p>
-                    <p>{date}</p>
-                  </div>
-                
-              </div>
-
-            )
-          })}
-      </div>
-    );
-  };
-
-  
-  
 //jsx return
     return (
       <div>
@@ -115,7 +77,9 @@ const Post = (props) => {
 
         <h2>Comments</h2>
 
-        <CommentsJsx/>
+        <CommentsJsx
+         commentData={commentData}
+        />
         
       </div>
     );
