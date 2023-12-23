@@ -30,6 +30,7 @@ const Post = (props) => {
        .then((response) => response.json())
        .then((data) => {
           console.log(data)
+          setComments(data)
           //maybe set state for a rerender
        })
        .catch((err) => {
@@ -41,10 +42,9 @@ const Post = (props) => {
   const handleCommentSubmit = (event) => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target).entries());
-    console.log(data)
-    console.log(postId)
     
     addComment(data.name, data.comment, postId)
+
     clearAllInputs()
   }
 
