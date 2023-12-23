@@ -9,23 +9,46 @@ const Post = (props) => {
 
     messages,
     comments,
-    setComments
+    setComments,
+    messageId,
+    setMessageId
     
   } = props;
+
+  const addComment = async (name, text, postId) => {
+    await fetch('https://blogapi1200.fly.dev/api/comments', {
+       method: 'POST',
+       body: JSON.stringify({
+          name: name,
+          text: text,
+          posts_id: postId,
+       }),
+       headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+       },
+    })
+       .then((response) => response.json())
+       .then((data) => {
+          console.log(data)
+          //maybe set state for a rerender
+       })
+       .catch((err) => {
+          console.log(err.message);
+       });
+ };
+ 
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target).entries());
     console.log(data)
-    /*
-    let uuid = self.crypto.randomUUID();
-    const idData = { ...data, id: uuid }
-    const newSchool = [...schoolData, idData]
-    setSchoolData(newSchool);
-*/
-
+    console.log(postId)
+    
+    addComment(data.name, data.comment, postId)
     clearAllInputs()
   }
+
+
 
   function clearAllInputs() {
     let nameInput = document.getElementById('name');

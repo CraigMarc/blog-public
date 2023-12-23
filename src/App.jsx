@@ -7,6 +7,7 @@ function App() {
 
   const [messages, setMessages] = useState([])
   const [comments, setComments] = useState()
+  const [messageId, setMessageId] = useState()
 
    // get comments from api
    const [error, setError] = useState(null);
@@ -64,6 +65,8 @@ return (
     setMessages={setMessages}
     comments={comments}
     setComments={setComments}
+    messageId={messageId}
+    setMessageId={setMessageId}
     />
   </div>
 )
