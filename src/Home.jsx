@@ -25,7 +25,7 @@ function Home(props) {
       const res = await fetch("https://blogapi1200.fly.dev/api/published")
 
       const messageData = await res.json();
-      
+     
       //setData(productData)
       setMessages(messageData)
 
@@ -75,9 +75,9 @@ function Home(props) {
             
             return (
 
-              <div key={index.id} className="product">
-                <Link to="/message" state={index.id}>
-                  <div id={index.id} className="card" >
+              <div key={index._id} className="product">
+                <Link to={`post/${index._id}`} state={index._id}>
+                  <div id={index._id} className="card" >
 
 
                     <h3>{index.title}</h3>

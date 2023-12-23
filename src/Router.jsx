@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Home";
-import Message from "./Message"
+import Post from "./Post"
 import ErrorPage from "./ErrorPage";
 
 
@@ -26,10 +26,10 @@ const Router = (props) => {
       errorElement: <ErrorPage />,
     },
     {
-        path: "/message",
+        path: "/post/:id",
         element:
-          <Message 
-          
+          <Post
+          messages={messages}
           />,
         
         errorElement: <ErrorPage />,
