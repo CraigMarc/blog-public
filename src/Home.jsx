@@ -8,6 +8,8 @@ function Home(props) {
 
     messages,
     setMessages,
+    comments,
+    setComments
 
 
   } = props;
@@ -22,13 +24,22 @@ function Home(props) {
 
     try {
       //return fetch(picUrl)
-      const res = await fetch("https://blogapi1200.fly.dev/api/published")
+      //const res = await fetch("https://blogapi1200.fly.dev/api/published")
+      const [apiPosts, apiComments] = await Promise.all([
+        fetch('https://blogapi1200.fly.dev/api/published', {
+          
+        }),
+        fetch("https://blogapi1200.fly.dev/api/comments")
+      ]);
 
-      const messageData = await res.json();
+      //const messageData = await res.json();
+
+      const messageData = await apiPosts.json();
+      const commentData = await apiComments.json();
 
       //setData(productData)
       setMessages(messageData)
-
+      setComments(commentData)
     }
 
     catch (error) {
@@ -71,17 +82,16 @@ function Home(props) {
 
           {messages.map((index) => {
             let date = new Date(index.timestamp).toLocaleString()
-
+            const postComments = comments.filter((comment) => comment.posts_id == index._id).length
 
             return (
 
               <div key={index._id} className="product">
                 <Link to={`post/${index._id}`} state={index._id}>
                   <div id={index._id} className="card" >
-
-
                     <h3>{index.title}</h3>
                     <p>{date}</p>
+                    <p>Comments: {postComments}</p>
                   </div>
                 </Link>
               </div>

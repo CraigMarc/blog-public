@@ -12,33 +12,35 @@ const Router = (props) => {
     setMessages,
     comments,
     setComments,
-    
+
 
   } = props;
 
   const router = createBrowserRouter([
-    
+
     {
       path: "/",
       element: <Home
-      messages={messages}
+        messages={messages}
         setMessages={setMessages}
+        comments={comments}
+        setComments={setComments}
       />,
       errorElement: <ErrorPage />,
     },
     {
-        path: "/post/:id",
-        element:
-          <Post
+      path: "/post/:id",
+      element:
+        <Post
           messages={messages}
           comments={comments}
           setComments={setComments}
-          
-          />,
-        
-        errorElement: <ErrorPage />,
-      },
-     
+
+        />,
+
+      errorElement: <ErrorPage />,
+    },
+
 
   ]);
 
