@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import Header from './Header'
+import './App.css'
 
 function Home(props) {
 
@@ -27,7 +28,7 @@ function Home(props) {
       //const res = await fetch("https://blogapi1200.fly.dev/api/published")
       const [apiPosts, apiComments] = await Promise.all([
         fetch('https://blogapi1200.fly.dev/api/published', {
-          
+
         }),
         fetch("https://blogapi1200.fly.dev/api/comments")
       ]);
@@ -72,39 +73,67 @@ function Home(props) {
 
 
 
+ 
+    return (
 
-  return (
-    <div>
-      <Header />
-      <div className='postContainer'>
+      <div>
+        <Header />
+        <div className='postContainer'>
 
-        <div className="postCard">
+          <div className="postCard">
 
-          {messages.map((index) => {
-            let date = new Date(index.timestamp).toLocaleString()
-            const postComments = comments.filter((comment) => comment.posts_id == index._id).length
+            {messages.map((index) => {
+              let date = new Date(index.timestamp).toLocaleString()
+              const postComments = comments.filter((comment) => comment.posts_id == index._id).length
+              let image = index.image
+              let url = ""
+              if (image) {
+                url = `https://blogapi1200.fly.dev/uploads/${index.image}`
+              }
+              if (image) {
+              return (
 
-            return (
+                <div key={index._id} className="post">
+                  <Link to={`post/${index._id}`} state={index._id}>
+                    <div id={index._id} className="card" >
+                      <h3>{index.title}</h3>
+                      <img className="imgHome" src={url}></img>
+                      <p>{date}</p>
+                      <p>Comments: {postComments}</p>
+                    </div>
+                  </Link>
+                </div>
 
-              <div key={index._id} className="product">
-                <Link to={`post/${index._id}`} state={index._id}>
-                  <div id={index._id} className="card" >
-                    <h3>{index.title}</h3>
-                    <p>{date}</p>
-                    <p>Comments: {postComments}</p>
+              )
+              }
+              else {
+                return (
+
+                  <div key={index._id} className="post">
+                    <Link to={`post/${index._id}`} state={index._id}>
+                      <div id={index._id} className="card" >
+                        <h3>{index.title}</h3>
+                        <p>{date}</p>
+                        <p>Comments: {postComments}</p>
+                      </div>
+                    </Link>
                   </div>
-                </Link>
-              </div>
+  
+                )
 
-            )
-          })}
+              
+              }
+            })}
 
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  
+     
+
+  }
 
 
-}
 
 export default Home
