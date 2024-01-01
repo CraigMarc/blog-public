@@ -11,9 +11,11 @@
 }
 
 .post {
-  border: solid;
+  box-shadow: 0 0 5px grey;
   width: 70vw;
   margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
