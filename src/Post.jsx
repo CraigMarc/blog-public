@@ -64,17 +64,38 @@ const Post = (props) => {
   const postId = urlParams.id
 
   const postData = messages.filter((post) => post._id == postId)
-
+  let image = ''
+  if (postData[0].image) {
+  image = `https://blogapi1200.fly.dev/uploads/${postData[0].image}`
+  }
+ console.log(image)
   //filter comments for the proper comments
 
   const commentData = comments.filter((comment) => comment.posts_id == postId)
-
+  let postJsx = ""
+  if (image) {
+  postJsx =
+    
+      <div>
+      <h2>{postData[0].title}</h2>
+      <img className="imgPost" src={image}></img>
+      <p>{postData[0].text}</p>
+      </div>
+  }
+  else {
+    postJsx =
+      <div>
+      <h2>{postData[0].title}</h2>
+      <p>{postData[0].text}</p>
+      </div>
+  }
+  
   //jsx return
   return (
     <div>
       <Header/>
-      <h2>{postData[0].title}</h2>
-      <p>{postData[0].text}</p>
+      
+      <div>{postJsx}</div>
 
       <h2>Comments</h2>
 
