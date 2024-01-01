@@ -73,66 +73,80 @@ function Home(props) {
 
 
 
- 
-    return (
 
-      <div>
-        <Header />
-        <div className='postContainer'>
+  return (
 
-          <div className="postCard">
+    <div>
+      <div className="headerContainer">
+      <Header />
+      </div>
+      <div className='postContainer'>
 
-            {messages.map((index) => {
-              let date = new Date(index.timestamp).toLocaleString()
-              const postComments = comments.filter((comment) => comment.posts_id == index._id).length
-              let image = index.image
-              let url = ""
-              if (image) {
-                url = `https://blogapi1200.fly.dev/uploads/${index.image}`
-              }
-              if (image) {
+        <div className="postCard">
+
+          {messages.map((index) => {
+            let date = new Date(index.timestamp).toLocaleString()
+            const postComments = comments.filter((comment) => comment.posts_id == index._id).length
+            let image = index.image
+            let url = ""
+            if (image) {
+              url = `https://blogapi1200.fly.dev/uploads/${index.image}`
+            }
+            if (image) {
               return (
 
                 <div key={index._id} className="post">
                   <Link to={`post/${index._id}`} state={index._id}>
                     <div id={index._id} className="card" >
-                      <h3>{index.title}</h3>
+                      <h2>{index.title}</h2>
                       <img className="imgHome" src={url}></img>
-                      <p>{date}</p>
-                      <p>Comments: {postComments}</p>
+                      <div className="commentContainer">
+                        <div>
+                          <p>{date}</p>
+                        </div>
+                        <div>
+                          <p>Comments: {postComments}</p>
+                        </div>
+                      </div>
                     </div>
                   </Link>
                 </div>
 
               )
-              }
-              else {
-                return (
+            }
+            else {
+              return (
 
-                  <div key={index._id} className="post">
-                    <Link to={`post/${index._id}`} state={index._id}>
-                      <div id={index._id} className="card" >
-                        <h3>{index.title}</h3>
-                        <p>{date}</p>
-                        <p>Comments: {postComments}</p>
+                <div key={index._id} className="post">
+                  <Link to={`post/${index._id}`} state={index._id}>
+                    <div id={index._id} className="card" >
+                      <h2>{index.title}</h2>
+                      <div className="commentContainer">
+                        <div className='dateContainer'>
+                          <p>{date}</p>
+                        </div>
+                        <div className='commentPadding'>
+                          <p>Comments: {postComments}</p>
+                        </div>
                       </div>
-                    </Link>
-                  </div>
-  
-                )
+                    </div>
+                  </Link>
+                </div>
 
-              
-              }
-            })}
+              )
 
-          </div>
+
+            }
+          })}
+
         </div>
       </div>
-    )
-  
-     
+    </div>
+  )
 
-  }
+
+
+}
 
 
 

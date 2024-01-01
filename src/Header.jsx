@@ -7,7 +7,7 @@ return (
 <header>
 
 <Link className="heading" to="/">
-  <h1>Blog</h1>
+  <h1>My Blog</h1>
 </Link>
 </header>
 </div>
