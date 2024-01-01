@@ -79,7 +79,9 @@ const Post = (props) => {
       <div>
       <h2>{postData[0].title}</h2>
       <img className="imgPost" src={image}></img>
+      <div className='postPadding'>
       <p>{postData[0].text}</p>
+      </div>
       </div>
   }
   else {

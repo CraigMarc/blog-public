@@ -21,9 +21,9 @@ const CommentsJsx = (props) => {
             
             return (
 
-              <div key={index._id} className="product">
+              <div key={index._id} className="commentsContainer">
                 
-                  <div id={index._id} className="card" >
+                  <div id={index._id} className="comment" >
 
 
                     <h3>{index.name}</h3>

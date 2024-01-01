@@ -60,3 +60,15 @@ header {
 .commentPadding {
 padding-right: 5px;
 }
+
+.comment {
+  border-bottom: solid;
+  border-width: 0.1px;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.postPadding {
+  padding-left: 30px;
+  padding-right: 30px;
+}
