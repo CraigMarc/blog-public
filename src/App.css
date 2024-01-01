@@ -18,7 +18,7 @@ h2 {font-size: 30px;}
 h1 {font-size: 60px;}
 
 .imgHome {
-  height: 30%;
+  height: 40%;
   width: 90%;
 }
 
@@ -44,6 +44,8 @@ h1 {font-size: 60px;}
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 @media only screen and (max-width: 500px) {

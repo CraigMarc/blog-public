@@ -105,7 +105,9 @@ function Home(props) {
                           <p>{date}</p>
                         </div>
                         <div>
+                        <div className='commentPadding'>
                           <p>Comments: {postComments}</p>
+                        </div>
                         </div>
                       </div>
                     </div>
