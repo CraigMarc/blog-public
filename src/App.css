@@ -71,6 +71,7 @@ padding-right: 5px;
   border-width: 0.1px;
   text-align: left;
   padding-left: 50px;
+  padding-bottom: 20px;
 }
 
 .postPadding {
@@ -125,4 +126,9 @@ form {
 
 .commentPad {
 padding-top: 30px;
+}
+
+.commentsContainer {
+  margin-bottom: 20px;
+  
 }
