@@ -83,6 +83,8 @@ padding-right: 5px;
 label > p {
   font-weight: bold;
   font-size: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 input {
@@ -111,4 +113,8 @@ input {
 
 .postTitle {
   padding-bottom: 20px;
+}
+
+form {
+  padding-top: 40px;
 }
