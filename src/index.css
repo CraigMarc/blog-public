@@ -7,6 +7,14 @@ a:hover {
   color: gray;
 }
 
+.heading {
+  color: white;
+}
+
+.heading:hover {
+  color: wheat;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

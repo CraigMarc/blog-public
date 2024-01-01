@@ -25,7 +25,7 @@ function Home(props) {
 
     try {
       //return fetch(picUrl)
-      //const res = await fetch("https://blogapi1200.fly.dev/api/published")
+      
       const [apiPosts, apiComments] = await Promise.all([
         fetch('https://blogapi1200.fly.dev/api/published', {
 
@@ -33,7 +33,7 @@ function Home(props) {
         fetch("https://blogapi1200.fly.dev/api/comments")
       ]);
 
-      //const messageData = await res.json();
+     
 
       const messageData = await apiPosts.json();
       const commentData = await apiComments.json();
