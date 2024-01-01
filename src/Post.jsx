@@ -77,7 +77,7 @@ const Post = (props) => {
     postJsx =
 
       <div>
-          <h2 >{postData[0].title}</h2>
+          <h2 className='postTitle'>hello{postData[0].title}</h2>
         <img className="imgPost" src={image}></img>
         <div className='postPadding'>
           <p>{postData[0].text}</p>
@@ -104,7 +104,7 @@ const Post = (props) => {
 
       <div>{postJsx}</div>
 
-      <h2>Comments</h2>
+      <h2 className='commentPad'>Comments</h2>
 
       <CommentsJsx
         commentData={commentData}

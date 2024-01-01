@@ -74,6 +74,7 @@ padding-right: 5px;
 .postPadding {
   padding-left: 30px;
   padding-right: 30px;
+  padding-top: 30px;
 }
 
 .noComments {
@@ -112,9 +113,14 @@ input {
 }
 
 .postTitle {
-  padding-bottom: 20px;
-}
+  padding-top: 20px;
+  padding-bottom: 30px;
+ }
 
 form {
-  padding-top: 40px;
+  padding-top: 10px;
+}
+
+.commentPad {
+padding-top: 30px;
 }
