@@ -9,7 +9,7 @@ const CommentsJsx = (props) => {
     
     if (commentData.length == 0) {
       return (
-        <div>there are no comments</div>
+        <div className="noComments">there are no comments</div>
       )
     }
 

@@ -72,3 +72,29 @@ padding-right: 5px;
   padding-left: 30px;
   padding-right: 30px;
 }
+
+.noComments {
+  padding-bottom: 30px;
+}
+
+label > p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+input {
+  border-radius: 7px;
+  font-size: 20px;
+}
+
+.submitContainer {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.commentSubmit {
+  width: 200px;
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

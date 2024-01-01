@@ -88,7 +88,9 @@ const Post = (props) => {
     postJsx =
       <div>
       <h2>{postData[0].title}</h2>
+      <div className='postPadding'>
       <p>{postData[0].text}</p>
+      </div>
       </div>
   }
   
@@ -108,7 +110,7 @@ const Post = (props) => {
       <form id="commentForm" onSubmit={handleCommentSubmit}>
 
         <label>
-          Name {' '}
+         <p>Name {' '}</p> 
           <input
             id="name"
             type="text"
@@ -119,7 +121,7 @@ const Post = (props) => {
         </label>
 
         <label>
-          Comment {' '}
+         <p>Comment {' '}</p> 
           <input
             id="comment"
             type="text"
@@ -130,7 +132,7 @@ const Post = (props) => {
         </label>
 
         <div className="submitContainer">
-          <input type="submit" value="add a comment" />
+          <input className='commentSubmit'  type="submit" value="Add a Comment" />
         </div>
       </form>
 
