@@ -28,7 +28,7 @@ const Post = (props) => {
     })
       .then((response) => response.json())
       .then((data) => {
-       
+
         setComments(data)
         //maybe set state for a rerender
       })
@@ -66,39 +66,42 @@ const Post = (props) => {
   const postData = messages.filter((post) => post._id == postId)
   let image = ''
   if (postData[0].image) {
-  image = `https://blogapi1200.fly.dev/uploads/${postData[0].image}`
+    image = `https://blogapi1200.fly.dev/uploads/${postData[0].image}`
   }
- console.log(image)
+  console.log(image)
   //filter comments for the proper comments
 
   const commentData = comments.filter((comment) => comment.posts_id == postId)
   let postJsx = ""
   if (image) {
-  postJsx =
-    
+    postJsx =
+
       <div>
-      <h2>{postData[0].title}</h2>
-      <img className="imgPost" src={image}></img>
-      <div className='postPadding'>
-      <p>{postData[0].text}</p>
-      </div>
+          <h2 >{postData[0].title}</h2>
+        <img className="imgPost" src={image}></img>
+        <div className='postPadding'>
+          <p>{postData[0].text}</p>
+        </div>
       </div>
   }
   else {
     postJsx =
       <div>
-      <h2>{postData[0].title}</h2>
-      <div className='postPadding'>
-      <p>{postData[0].text}</p>
-      </div>
+        <h2 className='postTitle'>{postData[0].title}</h2>
+        <div className='postPadding'>
+          <p>{postData[0].text}</p>
+        </div>
       </div>
   }
-  
+
   //jsx return
   return (
     <div>
-      <Header/>
-      
+
+      <div className="headerContainer">
+        <Header />
+      </div>
+
       <div>{postJsx}</div>
 
       <h2>Comments</h2>
@@ -110,7 +113,7 @@ const Post = (props) => {
       <form id="commentForm" onSubmit={handleCommentSubmit}>
 
         <label>
-         <p>Name {' '}</p> 
+          <p>Name {' '}</p>
           <input
             id="name"
             type="text"
@@ -121,7 +124,7 @@ const Post = (props) => {
         </label>
 
         <label>
-         <p>Comment {' '}</p> 
+          <p>Comment {' '}</p>
           <input
             id="comment"
             type="text"
@@ -132,7 +135,7 @@ const Post = (props) => {
         </label>
 
         <div className="submitContainer">
-          <input className='commentSubmit'  type="submit" value="Add a Comment" />
+          <input className='commentSubmit' type="submit" value="Add a Comment" />
         </div>
       </form>
 

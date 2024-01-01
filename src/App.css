@@ -1,14 +1,16 @@
-/*
-#root {
- 
-  margin: 0;
-  text-align: center;
-  
-}*/
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+ } 
 
 body {
-  margin: 0%;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
   text-align: center;
+  padding-bottom: 20px;
 }
 
 h2 {font-size: 30px;}
@@ -26,6 +28,7 @@ h1 {font-size: 60px;}
   margin-top: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
+ 
 }
 
 
@@ -97,4 +100,15 @@ input {
   font-size: 20px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.headerContainer {
+  background-color: rgb(216, 216, 238);
+  padding-bottom: 20px;
+  border-bottom: solid;
+  border-width: 0.1px;
+}
+
+.postTitle {
+  padding-bottom: 20px;
 }

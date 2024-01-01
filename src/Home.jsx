@@ -98,7 +98,7 @@ function Home(props) {
                 <div key={index._id} className="post">
                   <Link to={`post/${index._id}`} state={index._id}>
                     <div id={index._id} className="card" >
-                      <h2>{index.title}</h2>
+                      <h2 className='homeTitle'>{index.title}</h2>
                       <img className="imgHome" src={url}></img>
                       <div className="commentContainer">
                         <div>
@@ -120,7 +120,7 @@ function Home(props) {
                 <div key={index._id} className="post">
                   <Link to={`post/${index._id}`} state={index._id}>
                     <div id={index._id} className="card" >
-                      <h2>{index.title}</h2>
+                      <h2 className='homeTitle2'>{index.title}</h2>
                       <div className="commentContainer">
                         <div className='dateContainer'>
                           <p>{date}</p>
