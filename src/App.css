@@ -40,7 +40,10 @@ h1 {font-size: 60px;}
   }
 }
 
-
+.imgPost {
+  width: 330px;
+  height: 225px;
+}
 
 .postContainer {
   display: flex;
