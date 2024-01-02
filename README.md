@@ -1,8 +1,10 @@
 # React + Vite
+A basic blog site using a React front end and a node.js api to perform CRUD operations on the database
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo is live [here](https://blog-public-two.vercel.app/)
 
-Currently, two official plugins are available:
+Visit the CMS repo for this project [here](https://github.com/CraigMarc/blog-user).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This CMS site is live [here](https://blog-user-beta.vercel.app/)
+
+Visit the REST API repo for this project [here](https://github.com/CraigMarc/blog).
